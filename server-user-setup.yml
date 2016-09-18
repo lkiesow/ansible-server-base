@@ -1,0 +1,50 @@
+---
+# vim: et:ts=2:sw=2:sts=2
+
+- hosts: server
+
+  vars:
+    cfgrepo: https://github.com/lkiesow/system-configuration.git
+
+  tasks:
+    - name: install base tools
+      become: yes
+      package:
+        state=present
+        name={{ item }}
+      with_items:
+        - ctags
+        - git
+        - htop
+        - nload
+        - tar
+        - vim-enhanced
+        - zsh
+
+    - name: checkout system configuration
+      git:
+        repo={{ cfgrepo }}
+        dest=~/system-configuration
+
+    - name: link configuration
+      file:
+        src=~/system-configuration/{{ item }}
+        dest=~/{{ item }}
+        state=link
+        force=yes
+      with_items:
+        - .vimrc
+        - .zshrc
+        - .vim
+        - .tmux.conf
+
+    - name: set shell color
+      copy:
+        content={{ color }}
+        dest=~/.zsh_color
+
+    - name: set zsh as default shell
+      become: yes
+      user:
+        name={{ ansible_user_id }}
+        shell=/bin/zsh

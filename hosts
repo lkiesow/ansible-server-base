@@ -1,0 +1,31 @@
+[server:children]
+green
+yellow
+red
+
+
+[green]
+localhost ansible_connection=local
+lkiesow.virtuos.uos.de
+
+[green:vars]
+color=green
+
+
+[yellow]
+nexus.opencast.org
+pkg.opencast.org
+# docs == pkg
+# docs.opencast.org
+pullrequests.opencast.org
+octestallinone.virtuos.uos.de
+
+[yellow:vars]
+color=yellow
+
+
+[red]
+lkiesow.de
+
+[red:vars]
+color=red
