@@ -19,6 +19,9 @@ pkg.opencast.org
 # docs.opencast.org
 pullrequests.opencast.org
 octestallinone.virtuos.uos.de
+build.opencast.org
+mhbuild.ethz.ch
+nexus.dcex.harvard.edu
 
 [yellow:vars]
 color=yellow

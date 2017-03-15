@@ -37,6 +37,7 @@
         - .zshrc
         - .vim
         - .tmux.conf
+        - .colors
 
     - name: set shell color
       copy:
