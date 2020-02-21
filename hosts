@@ -2,6 +2,7 @@
 green
 yellow
 red
+ethz
 
 
 [green]
@@ -14,14 +15,13 @@ color=green
 
 [yellow]
 nexus.opencast.org
+mvncache.opencast.org
 pkg.opencast.org
-# docs == pkg
-# docs.opencast.org
-pullrequests.opencast.org
-octestallinone.virtuos.uos.de
+pyca.opencast.org
 build.opencast.org
-mhbuild.ethz.ch
-nexus.dcex.harvard.edu
+legacy.opencast.org
+stable.opencast.org
+develop.opencast.org
 
 [yellow:vars]
 color=yellow
@@ -32,3 +32,16 @@ lkiesow.de
 
 [red:vars]
 color=red
+
+
+[ethz]
+oc-vp-admin01.ethz.ch
+oc-vp-worker01.ethz.ch
+oc-vp-worker02.ethz.ch
+oc-vp-worker03.ethz.ch
+oc-vp-worker04.ethz.ch
+oc-vp-presentation01.ethz.ch
+oc-vp-ingest01.ethz.ch
+
+[ethz:vars]
+color=yellow
