@@ -2,7 +2,8 @@
 green
 yellow
 red
-ethz
+eth
+bbb
 
 
 [green]
@@ -33,15 +34,24 @@ lkiesow.de
 [red:vars]
 color=red
 
+[bbb]
+conference.opencast-niedersachsen.de
+webconf01.uni-osnabrueck.de
+webconf02.uni-osnabrueck.de
+webconf03.uni-osnabrueck.de
+webconf04.uni-osnabrueck.de
 
-[ethz]
+[bbb:vars]
+color=magenta
+
+[eth]
 oc-vp-admin01.ethz.ch
+oc-vp-ingest01.ethz.ch
+oc-vp-presentation01.ethz.ch
 oc-vp-worker01.ethz.ch
 oc-vp-worker02.ethz.ch
 oc-vp-worker03.ethz.ch
 oc-vp-worker04.ethz.ch
-oc-vp-presentation01.ethz.ch
-oc-vp-ingest01.ethz.ch
 
-[ethz:vars]
-color=yellow
+[eth:vars]
+color=blue
