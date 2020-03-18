@@ -10,28 +10,26 @@
     - name: install base tools
       become: yes
       package:
-        state=present
-        name={{ item }}
-      with_items:
-        - ctags
-        - git
-        - htop
-        - nload
-        - tar
-        - vim-enhanced
-        - zsh
+        state: present
+        name:
+          - git
+          - htop
+          - nload
+          - tar
+          - zsh
+          - vim
 
     - name: checkout system configuration
       git:
-        repo={{ cfgrepo }}
-        dest=~/system-configuration
+        repo: '{{ cfgrepo }}'
+        dest: ~/system-configuration
 
     - name: link configuration
       file:
-        src=~/system-configuration/{{ item }}
-        dest=~/{{ item }}
-        state=link
-        force=yes
+        src: ~/system-configuration/{{ item }}
+        dest: ~/{{ item }}
+        state: link
+        force: yes
       with_items:
         - .vimrc
         - .zshrc
@@ -41,11 +39,11 @@
 
     - name: set shell color
       copy:
-        content={{ color }}
-        dest=~/.zsh_color
+        content: '{{ color }}'
+        dest: ~/.zsh_color
 
     - name: set zsh as default shell
       become: yes
       user:
-        name={{ ansible_user_id }}
-        shell=/bin/zsh
+        name: '{{ ansible_user_id }}'
+        shell: /bin/zsh
